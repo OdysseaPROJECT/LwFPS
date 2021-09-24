@@ -119,10 +119,8 @@ public class Perspective {
             } else if(this.toggleKey.isPressed()) {
                 this.perspectiveEnabled = !this.perspectiveEnabled;
 
-                //this.cameraPitch = this.client.player.rotationPitch;
-                //this.cameraYaw = this.client.player.rotationYaw;
-                this.cameraPitch = this.client.player.cameraPitch;
-                this.cameraYaw = this.client.player.getRotationYawHead();
+                this.cameraPitch = this.client.player.rotationPitch;
+                this.cameraYaw = this.client.player.rotationYaw;
 
                 this.client.gameSettings.thirdPersonView = this.perspectiveEnabled ? 1 : 0;
             }
