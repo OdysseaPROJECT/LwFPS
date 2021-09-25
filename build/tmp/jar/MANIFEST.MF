@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: Better Third Person
-Implementation-Version: 1.0-SNAPSHOT
-Specification-Vendor: examplemodsareus
-Specification-Title: examplemod
-Implementation-Timestamp: 2021-09-24T22:33:07+0300
-Specification-Version: 1
-Implementation-Vendor: examplemodsareus
-
