@@ -27,4 +27,4 @@ For juristical purposes, ensure writing on pinned juristical mail of project.
 
 #### License
 
-Project under protection of current license: [Custom LC](LICENSE.md).
+Project under protection of current license: [Custom LC](./LICENSE.md).
