@@ -1,0 +1,21 @@
+# IGNORE for a MCP.
+#
+# Logging files and journals.
+
+*.log           
+
+# Compiled class files.
+
+*.class
+
+# VMC-reports.
+
+hs_err_pid*
+
+# IntelliJ IDEA configuration.
+
+.idea/
+
+# Debug-stage of program.
+
+**/test/*
