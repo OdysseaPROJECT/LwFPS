@@ -132,7 +132,7 @@
 
     editor = emacsclient -t -a emacs
 
-# COLOR: Enable coloroured UI.
+# COLOR: Enable coloured UI.
 
 [color]
 
@@ -240,7 +240,7 @@
 
     decorate = false
 
-    # LOG: Use abbreviature SHA.
+    # LOG: Use abbreviate SHA.
 
     abbrevCommit = true
 
@@ -254,7 +254,7 @@
 
     useHttpPath = true
 
-# MERGE: Display common ancestering blocks in conflicts.
+# MERGE: Display common ancestoring blocks in conflicts.
 
 [merge]
     
@@ -302,7 +302,7 @@
 
     autoSquash = true
 
-    # REBASE: Automatically stash current widthdrawal and stages.
+    # REBASE: Automatically stash current withdrawal and stages.
 
     autoStash = true
 
