@@ -45,7 +45,8 @@ For different pull-requests topics you can use different patterns of it.
 1. Fork current repository.
 2. Clone the repository with help of different REST-clients alike SSH and HTTPS.
 3. Make your changes.
-4. Run GRADLE-command for applying automatic code formatting: `gradlew spotlessApply`.
+4. Run GRADLE-command for applying automatic code formatting. \
+For command see [GRADLE-docs](./.rc-gradle.json).
 5. Stage any made changes in cloned repository.
 6. Push for forked repository.
 7. Create a pull-request.
