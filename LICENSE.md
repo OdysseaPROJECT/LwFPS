@@ -1,4 +1,4 @@
-Copyright (c) Ektadelta
+**Copyright (c) Ektadelta**
 
 Permission is hereby granted, free of charge, to any person obtaining copy of this software and associated documentation files, to deal in the software without restrictions in brim of rights to modify, merge, sublicence and to permit persons to whom the software is furnished to do so, subject to the specified conditions:
 
