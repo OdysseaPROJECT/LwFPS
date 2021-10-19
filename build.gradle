@@ -115,3 +115,5 @@ publishing {
         }
     }
 }
+
+sourceSets { main { output.resourcesDir = output.getClassesDirs().getAsPath() } }
