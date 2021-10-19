@@ -1,4 +1,4 @@
-## Freelooj
+## Freelook
 
 A modification with free-look system of in-game third person with mode of custom static camera.
 
