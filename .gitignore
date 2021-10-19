@@ -28,7 +28,7 @@ hs_err_pid*
 
 # Workspace IGNORE.
 
-*/.idea/*
+.idea/
 
 # AWS User-specified.
 
@@ -52,6 +52,10 @@ hs_err_pid*
 
 .idea/**/gradle.xml
 .idea/**/libraries
+
+# GRADLE-IGNORE.
+
+.gradle/
 
 # File-based project format.
 
