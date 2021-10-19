@@ -1,6 +1,6 @@
 ## Freelook
 
-A modification with free-look system of in-game third person with mode of custom static camera.
+A modification with free-look system of in-game third person with mode of custom freelook camera allowing you to move your camera on 360 degrees while moving in one direction.
 
 ### License
 
