@@ -1,0 +1,17 @@
+# KEEP for MCP.
+#
+# ZS-scripts directory in MC.
+
+scripts/
+
+# Essentials for MCP.
+
+.essentials/
+
+# Remote-essentials for MCP.
+
+.essentials/*
+
+# Dependencies of MCP.
+
+**/META-INF/*
