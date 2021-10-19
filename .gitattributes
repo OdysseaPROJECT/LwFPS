@@ -1,0 +1,217 @@
+# ATTRIBUTES for MCP.
+#
+# Auto detect text and leave files detected as binary untouched.
+# Set default behaviour to automatically normalize line endings.
+#
+# Parameter will handle files not defined below.
+
+*                           text=auto
+
+# Formatting endings of different files to normalize the text.
+#
+# META.
+
+*.meta                      text -diff
+*.mcmeta                    text -diff
+
+# MCMOD.
+
+mcmod.*                     text -diff
+
+
+# ZS-scripts.
+
+*.zs                        text -diff
+
+# Environment patterns.
+
+*.dot                   text
+*.ejs                   text
+*.haml                  text
+*.handlebars            text
+*.hbs                   text
+*.hbt                   text
+*.jade                  text
+*.latte                 text
+*.mustache              text
+*.njk                   text
+*.phtml                 text
+*.tmpl                  text
+*.tpl                   text
+*.twig                  text
+*.vue                   text
+
+# Environment configurations and setups.
+
+*.cnf                       text
+*.conf                      text
+*.config                    text
+.editorconfig               text
+.env                        text
+.gitattributes              text
+.gitconfig                  text
+.htaccess                   text
+*.lock                      text -diff
+package.json                text eol=lf
+package-lock.json           text -diff
+pnpm-lock.yaml              text eol=lf -diff
+yarn.lock                   text -diff
+*.toml                      text
+*.yaml                      text
+*.yml                       text
+browserslist                text
+Makefile                    text
+makefile                    text
+
+# Programming languages and executable code.
+
+*.coffee                    text
+*.css                       text diff=css
+*.htm                       text diff=html
+*.html                      text diff=html
+*.inc                       text
+*.ini                       text
+*.js                        text
+*.json                      text
+*.jsx                       text
+*.less                      text
+*.ls                        text
+*.map                       text -diff
+*.od                        text
+*.onlydata                  text
+*.php                       text diff=php
+*.pl                        text
+*.ps1                       text eol=crlf
+*.py                        text diff=python
+*.rb                        text diff=ruby
+*.sass                      text
+*.scm                       text
+*.scss                      text diff=css
+*.sh                        text eol=lf
+*.sql                       text
+*.styl                      text
+*.tag                       text
+*.ts                        text
+*.tsx                       text
+*.xml                       text
+*.xhtml                     text diff=html
+
+# Executable primary code.
+
+*.java                      text diff=java
+*.javaclass                 text diff=java
+*.gradle                    text diff=java
+*.gradle.kts                text diff=java
+
+# Documentation with custom markup.
+
+*.ipynb                     text
+*.markdown                  text diff=markdown
+*.md                        text diff=markdown
+*.mdwn                      text diff=markdown
+*.mdown                     text diff=markdown
+*.mkd                       text diff=markdown
+*.mkdn                      text diff=markdown
+*.mdtxt                     text
+*.mdtext                    text
+*.txt                       text
+AUTHORS                     text
+CHANGELOG                   text
+CHANGES                     text
+CONTRIBUTING                text
+COPYING                     text
+copyright                   text
+*COPYRIGHT*                 text
+INSTALL                     text
+license                     text
+LICENSE                     text
+NEWS                        text
+readme                      text
+*README*                    text
+TODO                        text
+
+# Formatting the endings of LFS to normalize binaries.
+#
+# LFS-FILES.
+
+*.class                     binary
+*.dll                       binary
+*.ear                       binary
+*.jar                       binary
+*.so                        binary
+*.war                       binary
+*.jks                       binary
+
+# LFS-GRAPHICS.
+
+*.ai                        binary
+*.bmp                       binary
+*.eps                       binary
+*.gif                       binary
+*.gifv                      binary
+*.ico                       binary
+*.jng                       binary
+*.jp2                       binary
+*.jpg                       binary
+*.jpeg                      binary
+*.jpx                       binary
+*.jxr                       binary
+*.pdf                       binary
+*.png                       binary
+*.psb                       binary
+*.psd                       binary
+*.svg                       text
+*.svgz                      binary
+*.tif                       binary
+*.tiff                      binary
+*.wbmp                      binary
+*.webp                      binary
+
+# LFS-ARCHIVES.
+
+*.7z                        binary
+*.gz                        binary
+*.jar                       binary
+*.rar                       binary
+*.tar                       binary
+*.zip                       binary
+
+# LFS-EXECUTABLES.
+
+*.exe                       binary
+*.pyc                       binary
+
+# LFS-DOCUMENTS.
+
+*.doc                       -text filter=lfs diff=astextplain merge=lfs
+*.dot                       -text filter=lfs diff=astextplain merge=lfs
+*.pdf                       -text filter=lfs diff=astextplain merge=lfs
+*.rtf                       -text filter=lfs diff=astextplain merge=lfs
+*.docx                      -text filter=lfs diff=astextplain merge=lfs
+
+# Formatting the endings of ENV to normalize setup.
+#
+# RC-files.
+
+*.*rc                       text
+
+# IGNORE-files.
+
+*.*ignore                   text
+
+# DOCKER-files.
+
+Dockerfile                  text
+
+# HEROKU-files.
+
+Procfile                    text
+
+# BATCH-files.
+
+*.{cmd,[cC][mM][dD]}        text eol=crlf
+*.{bat,[bB][aA][tT]}        text eol=crlf
+
+# BASH-files.
+
+*.{sh,[sS][hH]}             text eol=crlf
