@@ -26,6 +26,10 @@ hs_err_pid*
 .idea/**/dictionaries
 .idea/**/shelf
 
+# Workspace IGNORE.
+
+*/.idea/*
+
 # AWS User-specified.
 
 .idea/**/aws.xml
