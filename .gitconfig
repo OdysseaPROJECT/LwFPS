@@ -1,0 +1,327 @@
+# GITCONFIG for MCP.
+#
+# Editing aliases for current configuration of GIT.
+
+[alias]
+
+    # ALIAS: Display every of aliases inside the configuration.
+
+    aliases = !git config --get-regexp alias | sed -re 's/alias\\.(\\S*)\\s(.*)$/\\1 = \\2/g'
+
+    # ALIAS: Edit settings of the repository.
+
+    bc = rev-parse --abbrev-ref HEAD
+    bu = !git rev-parse --abbrev-ref --symbolic-full-name "@{u}"
+
+    # ALIAS: Set up the stream.
+
+    set-up-stream = !git branch --set-upstream-to=$(git bu)
+
+    # ALIAS: Delete chosen branch.
+
+    delete-branch = branch -D
+
+    # ALIAS: Display every branch of the repository.
+
+    display-branch = !git branch
+    display-branch-all = !git branch -a
+
+    # ALIAS: Show up LS.
+
+    ls = ls-files
+
+    # ALIAS: Check out the repository.
+
+    co = checkout
+    co-branch = checkout -b
+
+    # ALIAS: Push changes made in repository.
+
+    cm = !git commit -m
+    cm-add = !git add -A && git cm
+    cm-edit = commit -a --amend
+    amend = !git commit --amend --no-edit
+    amend-all = !git add -A && git amend
+
+    # ALIAS: Reword the commit.
+
+    reword = commit --amend
+
+    # ALIAS: Unstage changes of past commit.
+
+    uncommit = reset --soft HEAD~1
+
+    # ALIAS: Fetching commits and branches.
+
+    read = !git fetch -p
+    read-all = !git fetch -a -p
+
+    # ALIAS: Update the main branch.
+
+    up = !git pull --rebase --prune $@
+    update = !git read && git rebase origin/main
+    update-main = !git pull origin main
+    update-branch = !git pull origin $(git bc)
+
+    # ALIAS: Force-push of commit without lease.
+
+    push-with-lease = push --force-with-lease
+
+    # ALIAS: Functioning with submodules of the repository.
+
+    cm-sm = !git cm "SUBMODULE REFERENCE UPDATED"
+    update-sm = !git pull --recurse-submodules && git submodule update --init --recursive
+
+    # ALIAS: Waypoint any changes in unsaved commit.
+
+    wip = commit -am "WIPPOINT"
+    save = !git add -A && git commit -m 'SAVEPOINT' 
+
+    # ALIAS: Rebase of each other commit.
+
+    rebase-with-hooks = rebase -x 'git reset --soft HEAD~1 && git commit -C HEAD@{1}'
+
+    # ALIAS: Reset changes.
+
+    undo = reset HEAD~1 --mixed
+    unstage = reset
+    uncommit = reset --soft HEAD^
+    reset-head = reset HEAD --hard
+    reset-branch = reset --hard $(git bu)
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
+    # ALIAS: Merge changes in the branch.
+
+    mg = !git merge
+    mg-nf = !git merge --no-ff
+
+    # ALIAS: Set up audit log.
+
+    lg = log
+    lg-lite = log --oneline --decorate
+    lg-latest = log --abbrev-commit --decorate --format=format:'%C(bold red)%h%C(reset) - %C(bold blue)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold yellow)%d%C(reset) %n''%C(dim yellow)%H%C(reset) - %C(white)%s%C(reset) %n''%C(green)-(Committer: %cn <%ce>)%C(reset) %C(dim white)-(Author: %an <%ae>)%C(reset)' -1 HEAD --stat
+    lg-branch = log --graph --abbrev-commit --decorate --format=format:'%C(bold red)%h%C(reset) - %C(bold blue)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold yellow)%d%C(reset) %n''%C(dim yellow)%H%C(reset) - %C(white)%s%C(reset) %n''%C(green)-(Committer: %cn <%ce>)%C(reset) %C(dim white)-(Author: %an <%ae>)%C(reset)' HEAD --stat
+    lg-all = log --graph --abbrev-commit --decorate --format=format:'%C(bold red)%h%C(reset) - %C(bold blue)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold yellow)%d%C(reset) %n''%C(dim yellow)%H%C(reset) - %C(white)%s%C(reset) %n''%C(green)-(Committer: %cn <%ce>)%C(reset) %C(dim white)-(Author: %an <%ae>)%C(reset)' --all --stat
+    lg-mychange = "!myname=$(git config --get user.name);myemail=$(git config --get user.email); git log --graph --abbrev-commit --decorate --author $myemail " HEAD --stat
+
+[core]
+
+    # CORE: Disable paginating system.
+
+    pager = cat
+
+    # CORE: Edit the default IGNORE-files.
+
+    excludesfile = ~/.gitignore
+
+    # CORE: Declare mode of commands with output.
+
+    quotepath = false
+
+    # CORE: Edit endings preferences in repository.
+
+    autocrlf = input
+    safecrlf = warn
+
+    # CORE: Launch an editor with specified value.
+
+    editor = emacsclient -t -a emacs
+
+# COLOR: Enable coloured interface.
+
+[color]
+
+    ui = true
+    pager = true
+    interactive = auto
+    grep = always
+    decorate = always
+    showbranch = always
+
+# COLOR BRANCH: Enable colouring in branches interface.
+
+[color "branch"]
+
+    current = green bold
+    local = magenta
+    remote = cyan
+
+# COLOR DIFF: Enable colouring in differences interface.
+
+[color "diff"]
+
+    old = red
+    new = green
+    meta = cyan
+    frag = magenta
+    whitespace = yellow reverse
+
+# COLOR "STATUS": Enable colouring in status interface.
+
+[color "status"]
+
+    added = green
+    branch = green bold
+    changed = cyan
+    deleted = red dim
+    untracked = magenta
+
+[branch]
+    
+    autosetuprebase = always
+
+[branch "main"]
+
+    rebase = true
+
+[diff]
+
+    # DIFF: Declare default editor of differences.
+
+    tool = code
+
+    # DIFF: Enable showing up renames.
+
+    renames = true
+
+    # DIFF: Assume differences between specified regex.
+
+    wordRegex = .
+
+    # DIFF: Display information about current submodules.
+
+    submodule = log
+
+    # DIFF: Enable better and descriptive initials.
+
+    mnemonicPrefix = true
+
+# DIFFTOOL: Disable prompt of differences.
+
+[difftool "vscode"]
+
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+# FETCH: Enable auto-fetch of submodules.
+
+[fetch]
+    recurseSubmodules = on-demand
+
+[grep]
+
+    # GREP: Set up the highlight matches.
+
+    break = true
+    heading = true
+    lineNumber = true
+
+    # GREP: Consider most of regexes.
+
+    extendedRegexp = true
+
+[log]
+
+    # LOG: Automatically follow single path.
+
+    follow = true
+
+    # LOG: Disable decorating of reference logging.
+
+    decorate = false
+
+    # LOG: Use abbreviate SHA.
+
+    abbrevCommit = true
+
+[credential]
+
+    # CREDENTIAL: External helping module of credentials.
+
+    helper = osxkeychain
+
+    # CREDENTIAL: Acquire credential as component of HTTP.
+
+    useHttpPath = true
+
+# MERGE: Display common ancestoring blocks in conflicts.
+
+[merge]
+    
+    ff = false
+
+[mergetool]
+
+    # MERGETOOL: Clean up the backup files created by editor.
+
+    keepBackup = false
+
+    # MERGETOOL: Clean up the temp.
+
+    keepTemporaries = false
+
+    # MERGETOOL: Put temp in dedicated directory.
+
+    writeToTemp = true
+
+    # MERGETOOL: Auto accept file prompts in case of launch merging modules.
+
+    prompt = false
+
+[page]
+
+    show = diff-so-fancy | less --tabs=4 -RFX
+
+[pull]
+
+    rebase = merges
+
+[push]
+
+    # PUSH: Default push should push current branch to the target.
+
+    default = upstream
+
+    # PUSH: Push tags with commits in reachable upstream.
+
+    followTags = true
+
+[rebase]
+
+    # REBASE: Rebase advanced usage.
+
+    autoSquash = true
+
+    # REBASE: Automatically stash current withdrawal and stages.
+
+    autoStash = true
+
+[rerere]
+
+    enabled = true
+    autoupdate = true
+
+[status]
+
+    # STATUS: Display submodule referencing change summaries in status.
+
+    submoduleSummary = true
+
+    # STATUS: Recursively traverse untracked directories to display context.
+
+    showUntrackedFiles = all
+
+# TAG: Enable sorting algorithm of tags by numbers.
+
+[tag]
+
+    sort = version:refname
+
+[versionsort]
+
+    prereleaseSuffix = -pre
+    prereleaseSuffix = .pre
+    prereleaseSuffix = -beta
+    prereleaseSuffix = .beta
+    prereleaseSuffix = -rc
+    prereleaseSuffix = .rc
+    
