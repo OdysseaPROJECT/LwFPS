@@ -1,0 +1,7 @@
+{
+  "": [
+  "Start PowerShell as Administrator.",
+  "cd <path>",
+  "java -jar obfuscator.jar --jarIn <name>.jar --jarOut <name>-obf.jar"
+  ]
+}
