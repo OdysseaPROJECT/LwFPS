@@ -1,0 +1,10 @@
+#############
+# PATCHNOTE #
+#############
+
+###
+# V1.0-SNAPSHOT
+###
+
+# Written core of the modification and the first version of it.
+# Obfuscated the modification.
