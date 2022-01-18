@@ -1,0 +1,94 @@
+# IGNORE for MCP.
+#
+# Audit log and journals.
+
+*.log
+
+# Compiled class files.
+
+*.class
+
+# VMC-reports.
+
+hs_err_pid*
+
+# Debug directory.
+
+**/test/*
+
+# Environment IDEA IGNORE.
+#
+# Workspace setup.
+
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Workspace IGNORE.
+
+.idea/
+
+# AWS User-specified.
+
+.idea/**/aws.xml
+
+# Auto-generated files.
+
+.idea/**/contentModel.xml
+
+# Sensitive and high-churn files.
+
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# GRADLE-files.
+
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# GRADLE-IGNORE.
+
+.gradle/
+
+# File-based project format.
+
+*.iws
+
+# Editor-based REST client.
+
+.idea/httpRequests
+
+# Environment VSCODE IGNORE-file.
+#
+# Auto-generated files.
+
+.vscode/*
+
+# Workspace attributes.
+
+*.code-workspace
+
+# Debugging workspace settings.
+
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# MCP Environment.
+#
+# Directory of MCP debug.
+
+**/run/*
+
+# Libraries and dependencies.
+
+build/
+!/**/libs/*
