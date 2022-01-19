@@ -71,6 +71,10 @@ hs_err_pid*
 
 .vscode/*
 
+# Compiled project.
+
+bin/
+
 # Workspace attributes.
 
 *.code-workspace
